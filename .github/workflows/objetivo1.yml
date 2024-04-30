@@ -1,0 +1,22 @@
+name: On Push
+
+on:
+  push:
+    branches:
+      - '*'
+# Para cualquier runner
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Display runner and branch info
+      run: |
+        echo "Runner: ${{ runner.os }}"
+        echo "Branch: ${{ github.ref }}"
