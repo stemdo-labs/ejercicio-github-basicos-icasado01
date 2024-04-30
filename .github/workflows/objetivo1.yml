@@ -1,4 +1,4 @@
-name: On Push
+name: Objetivo 1
 
 on:
   push:
