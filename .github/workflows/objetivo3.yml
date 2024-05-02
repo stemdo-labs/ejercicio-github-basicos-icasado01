@@ -1,0 +1,25 @@
+name: Objetivo 3
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  generar-issue:
+    permissions:
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    env: 
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+    
+      - name: Crear issue
+        run: |
+          gh issue create --title "Issue creada" --body "Prueba de creación automática de issues"
+      
+      - name: Asignar issue
+        run: |
+          gh issue edit ${{ github.event.number }} --add-assignee icasado01
