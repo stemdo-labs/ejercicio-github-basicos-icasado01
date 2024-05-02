@@ -4,16 +4,6 @@ operacion=$1
 num1=$2
 num2=$3
 
-# Verificar si los valores ingresados son números
-if ! [[ $valor1 =~ ^[0-9]+$ ]]; then
-  echo "El primer valor no es un número válido."
-  exit 1
-fi
-
-if ! [[ $valor2 =~ ^[0-9]+$ ]]; then
-  echo "El segundo valor no es un número válido."
-  exit 1
-fi
 
 case $operacion in
   suma)
