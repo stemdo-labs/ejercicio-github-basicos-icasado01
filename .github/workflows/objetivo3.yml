@@ -22,4 +22,4 @@ jobs:
       
       - name: Asignar issue
         run: |
-          gh issue edit ${{ github.event.number }} --assignee icasado01
+          gh issue edit ${{ github.event.number }} --add-assignee icasado01
