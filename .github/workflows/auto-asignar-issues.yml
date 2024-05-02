@@ -1,0 +1,17 @@
+name: Auto-asignar issues
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  auto_assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      
+      - name: Auto-assign issue
+        uses: peter-evans/auto-assign@v2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          assignees: "icasado01"
