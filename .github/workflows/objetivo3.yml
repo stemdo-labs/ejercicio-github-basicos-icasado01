@@ -20,7 +20,7 @@ jobs:
             repo: context.repo.repo,
             owner: context.repo.owner,
             tittle: "Issue creada",
-            body: "Prueba de creación automática de issues",
+            body: "Prueba de creación automática de issues"
           )};
           console.log(response.data.html_url);
           core.set0up("issue_url", response.data.html_url);
