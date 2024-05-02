@@ -6,6 +6,9 @@ on:
 
 jobs:
   generar-issue:
+    permissions:
+      issues: write
+      pull-requests: write
     runs-on: ubuntu-latest
     env: 
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
