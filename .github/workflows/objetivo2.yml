@@ -1,0 +1,46 @@
+name: Objetivo 2
+
+on:
+  push:
+    branches:
+      - 3-objetivo-2
+
+jobs:
+# Estado build
+  build:
+    name: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkoout
+      uses: actions/checkout@v3
+    
+    - name: Estado build
+      run: |
+        echo "Contruyendo el proyecto"
+# Estado test
+  test:
+    name: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Iniciar Test
+        run: |
+          echo "Iniciando prueba del proyecto"
+
+  push:
+    name: push
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v
+
+    - name: Push de los cambios
+      run: |
+        echo "Haciendo push de los cambios"
+      
+          
