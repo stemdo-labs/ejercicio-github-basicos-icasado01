@@ -37,7 +37,7 @@ jobs:
 
     steps:
     - name: checkout
-      uses: actions/checkout@v
+      uses: actions/checkout@v3
 
     - name: Push de los cambios
       run: |
