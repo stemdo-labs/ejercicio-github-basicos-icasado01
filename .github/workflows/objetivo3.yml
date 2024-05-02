@@ -19,12 +19,12 @@ jobs:
           const response = await github.issues.create({
             repo: context.repo.repo,
             owner: context.repo.owner,
-            tittle: "Issue creada",
+            title: "Issue creada",
             body: "Prueba de creación automática de issues"
-          )};
+          });
           console.log(response.data.html_url);
-          core.set0up("issue_url", response.data.html_url);
-
+          core.setOutput("issue_url", response.data.html_url);
+    
     - name: Asignar issue
       uses: actions/github-script@v4
       with:
@@ -35,4 +35,4 @@ jobs:
             repo: context.repo.repo,
             issue_number: context.payload.pull_request.number,
             assignees: ["icasado01"]
-          )};
+          });
