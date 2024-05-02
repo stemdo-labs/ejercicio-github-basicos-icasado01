@@ -16,14 +16,14 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
-          const response = await github.isues.create({
+          const response = await github.issues.create({
             repo: context.repo.repo,
             owner: context.repo.owner,
             tittle: "Issue creada",
             body: "Prueba de creación automática de issues",
           )};
           console.log(response.data.html_url);
-          core.set0up("issue_url",response.data.html_url);
+          core.set0up("issue_url", response.data.html_url);
 
     - name: Asignar issue
       uses: actions/github-script@v4
