@@ -1,9 +1,8 @@
 name: Login en azure con Bash
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [opened, reopened]
 
 jobs:
   login:
