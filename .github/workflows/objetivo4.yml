@@ -17,5 +17,7 @@ jobs:
   calcular:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v3
       - name: Ejecutar operacion
-        run: bash ./soluciones/calculadora.sh ${{ github.event.inputs.operacion }} ${{ github.event.inputs.num1 }} ${{ github.event.inputs.num2 }}
+        run: bash ./soluciones/calculadora.sh ${{ github.event.inputs.operacion }} ${{ github.event.inputs.valor1 }} ${{ github.event.inputs.valor2 }}
