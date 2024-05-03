@@ -13,7 +13,7 @@ jobs:
 
       - name: Login en Azure (Bash)
         run: | 
-          az login --username ${{ secrets.AZ_USERNAME }} -- password ${{ secrets.AZ_PASS }}
+          az login --username ${{ secrets.AZ_USERNAME }} --password ${{ secrets.AZ_PASS }}
           if [ $? -eq 0 ]; then
             echo "Azure login successful!"
           else
