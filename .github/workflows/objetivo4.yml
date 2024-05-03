@@ -1,0 +1,23 @@
+name: Objetivo 4
+
+on:
+  workflow_dispatch:
+    inputs:
+      operacion:
+        description: "Elige una operación [suma, resta, multiplicacion, division]"
+        required: true
+      num1:
+        description: "Inserte un numero"
+        required: true
+      num2:
+        description: "Inserte otro numero"
+        required: true
+
+jobs:
+  calcular:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Ejecutar operacion
+        run: bash ./soluciones/calculadora.sh ${{ github.event.inputs.operacion }} ${{ github.event.inputs.num1 }} ${{ github.event.inputs.num2 }}
